@@ -1,0 +1,72 @@
+/*
+  bg: background-color
+  border: border-color
+  color: color text
+*/
+
+@mixin button_color_generate($bg, $border, $color: $token-color-white) {
+  @if $bg {
+    background-color: $bg;
+  }
+
+  @if $border {
+    border-color: $border;
+  }
+
+  color: $color;
+}
+
+@mixin button_color($type: '', $default, $hover, $color: null, $bg: null, $state: null) {
+  @if $type != 'outline' {
+    @if $color {
+      @include button_color_generate($default, $default, $color);
+      @if $hover {
+        &:not([disabled]) {
+          &:hover,
+          &:focus {
+            @include button_color_generate($hover, $hover, $color);
+          }
+        }
+      }
+    } @else {
+      @include button_color_generate($default, $default);
+      @if $hover {
+        &:not([disabled]) {
+          &:hover,
+          &:focus {
+            @include button_color_generate($hover, $hover);
+          }
+        }
+      }
+    }
+  } @else {
+    @include button_color_generate($token-color-transparent, $default, $default);
+
+    @if $hover {
+      &:not([disabled]) {
+        &:hover,
+        &:focus {
+          @if $state {
+            @include button_color_generate($state, $hover, $hover);
+          } @else {
+            @include button_color_generate($bg, $hover, $hover);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin button_size($padding, $fontSize, $radius) {
+  @if $padding {
+    padding: map-get($iota-media-extra, $padding);
+  }
+
+  @if $fontSize {
+    @include iota-type(map-get($iota-objs-type-sizes, $fontSize));
+  }
+
+  @if $radius {
+    border-radius: map-get($iota-border-radius, $radius);
+  }
+}

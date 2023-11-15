@@ -1,0 +1,23 @@
+/* normalize (base) & utility classes */
+@import "../shared";
+
+/* Alternative Font */
+$token-font-family-alternative: "Le Grand";
+
+@import "./dependencies";
+
+:root {
+  --primary-color-900: #{$token-color-weddings-900};
+  --primary-color-700: #{$token-color-weddings-700};
+  --primary-color-500: #{$token-color-weddings-500};
+  --primary-color-300: #{$token-color-weddings-300};
+  --primary-color-100: #{$token-color-weddings-100};
+}
+
+@mixin theme {
+  #{$token-prefix-class}-theme {
+    @include body;
+
+    @content;
+  }
+}

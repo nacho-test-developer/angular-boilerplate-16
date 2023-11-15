@@ -1,0 +1,194 @@
+@import "../settings/aspect-ratio";
+
+$iota-utils-width: "width-auto";
+
+.#{$iota-global-utilities-namespace} {
+  @each $i, $size in $iota-border-radius {
+    @if $ds-v2 {
+      &border-#{$i} {
+        border-radius: $size;
+      }
+    } @else {
+      &border#{$i} {
+        border-radius: $size;
+      }
+    }
+  }
+
+  @each $i, $ratio in $iota-aspect-ratio {
+    @if $ds-v2 {
+      &ratio-#{$i} {
+        aspect-ratio: #{$ratio};
+      }
+    }
+  }
+
+  &reset {
+    &-full {
+      all: unset;
+    }
+
+    &-button {
+      background-color: transparent;
+      border: 0;
+    }
+
+    &-list {
+      margin: 0;
+      padding: 0;
+      text-indent: 0;
+      list-style-type: none;
+    }
+
+    &-hr {
+      height: 1px;
+      border: 0;
+    }
+
+    &-fieldset {
+      border: 0;
+    }
+
+    &-visibility {
+      height: 0;
+      visibility: hidden;
+    }
+
+    &-selectable {
+      ::selection {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &list {
+    &-inside {
+      list-style-position: inside;
+    }
+  }
+
+  &pointer {
+    cursor: pointer;
+  }
+
+  @if $ds-v2 {
+    &shadows {
+      &-xs {
+        box-shadow: $token-shadows-xs;
+      }
+
+      &-md {
+        box-shadow: $token-shadows-md;
+      }
+
+      &-lg {
+        box-shadow: $token-shadows-lg;
+      }
+    }
+  } @else {
+    &elevation {
+      &-light {
+        box-shadow: $token-elevation-light;
+      }
+
+      &-dark {
+        box-shadow: $token-elevation-dark;
+      }
+    }
+  }
+
+  &truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &size {
+    height: $token-size-percentage-full;
+    width: $token-size-percentage-full;
+  }
+
+  &height {
+    height: $token-size-percentage-full;
+
+    &-100v {
+      height: 100vh;
+    }
+  }
+
+  &width {
+    width: $token-size-percentage-full;
+
+    &-100v {
+      width: 100vw;
+    }
+  }
+
+  // Iota add-ons
+  &mh-auto {
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+
+  &as {
+    &-start {
+      align-self: flex-start;
+    }
+
+    &-end {
+      align-self: flex-end;
+    }
+
+    &-center {
+      align-self: center;
+    }
+
+    &-stretch {
+      align-self: stretch;
+    }
+  }
+
+  &decoration {
+    &-none {
+      text-decoration: none;
+    }
+  }
+
+  &flex {
+    &-grow {
+      flex-grow: 1;
+    }
+
+    &-nowrap {
+      flex-wrap: nowrap;
+    }
+
+    &-wrap {
+      flex-wrap: wrap;
+    }
+  }
+
+  &overflow {
+    &-hidden {
+      overflow: hidden;
+    }
+
+    &-auto {
+      overflow: auto;
+    }
+  }
+
+  &box {
+    bottom: 0;
+    top: 0;
+    width: $token-size-percentage-full;
+  }
+
+  &ofit {
+    &-cover {
+      object-fit: cover;
+    }
+  }
+}

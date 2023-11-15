@@ -1,0 +1,115 @@
+$token-font-size-adjust: 0.447;
+
+// base
+$token-font-family-primary: "Roboto", sans-serif;
+$token-font-family-secondary: "Raleway", sans-serif;
+$token-font-family-alternative: $token-font-family-primary !default;
+
+// size
+$token-font-size-html: 16px; // normalize
+$token-font-size-base: 0.85rem; // 16px
+
+// display
+$token-font-size-display1: 6rem; // 96px
+$token-font-size-display2: 4.5rem; // 72px
+$token-font-size-display1-mobile: 4rem; // 64px
+$token-font-size-display2-mobile: 3rem; // 48px
+
+// heading
+$token-font-size-heading1: 3.75rem; // 60px
+$token-font-size-heading2: 3rem; // 48px
+$token-font-size-heading3: 2.5rem; // 40px
+$token-font-size-heading4: 2.25rem; // 36px
+$token-font-size-heading5: 1.875rem; // 30px
+$token-font-size-heading6: 1.5rem; // 24px
+$token-font-size-heading1-mobile: 2.25rem; // 36px
+$token-font-size-heading2-mobile: 1.875rem; // 30px
+$token-font-size-heading3-mobile: 1.75rem; // 28px
+$token-font-size-heading4-mobile: 1.688rem; // 27px
+$token-font-size-heading5-mobile: 1.438rem; // 23px
+$token-font-size-heading6-mobile: 1.25rem; // 20px
+
+// text
+$token-font-size-text-xl: 1.25rem; // 20px
+$token-font-size-text-lg: 1.125rem; // 18px
+$token-font-size-text-md: 1rem; // 16px
+$token-font-size-text-sm: 0.875rem; // 14px
+$token-font-size-text-xs: 0.75rem; // 12px
+
+// weight
+$token-font-weight-light: 300;
+$token-font-weight-regular: 400;
+$token-font-weight-bold: 700;
+
+// line height display
+$token-line-height-display1: 8rem;
+$token-line-height-display2: 6rem;
+$token-line-height-display1-mobile: 5.5rem;
+$token-line-height-display2-mobile: 4rem;
+
+// line height heading
+$token-line-height-heading1: 4.375rem;
+$token-line-height-heading2: 3.625rem;
+$token-line-height-heading3: 2.625rem;
+$token-line-height-heading4: 2.625rem;
+$token-line-height-heading5: 2.375rem;
+$token-line-height-heading6: 1.75rem;
+$token-line-height-heading1-mobile: 2.375rem;
+$token-line-height-heading2-mobile: 2rem;
+$token-line-height-heading3-mobile: 1.625rem;
+$token-line-height-heading4-mobile: 1.625rem;
+$token-line-height-heading5-mobile: 1.563rem;
+$token-line-height-heading6-mobile: 1.438rem;
+
+// line height text
+$token-line-height-text-xl: 1.875rem;
+$token-line-height-text-lg: 1.688rem;
+$token-line-height-text-md: 1.5rem;
+$token-line-height-text-sm: 1.25rem;
+$token-line-height-text-xs: 1.125rem;
+
+// vertical rhythm
+$iota-vertical-rhythm: (
+  h1: (null: 1.438rem,
+  xs: 2.188rem),
+  h2: (null: 1.25rem,
+  xs: 1.813rem),
+  h3: (null: 1.188rem,
+  xs: 1.313rem),
+  h4: (null: 1.125rem,
+  xs: 1.313rem),
+  h5: (null: 1rem,
+  xs: 1.1875rem),
+  h6: (null: 1rem,
+  xs: 1rem)
+);
+
+// maps
+$iota-weight-list: (
+  light: $token-font-weight-light,
+  regular: $token-font-weight-regular,
+  bold: $token-font-weight-bold
+);
+$iota-objs-type-sizes: (
+  display-1: (null: $token-font-size-display1-mobile $token-line-height-display1-mobile,
+  xs: $token-font-size-display1 $token-line-height-display1 ),
+  display-2: (null: $token-font-size-display2-mobile $token-line-height-display2-mobile,
+  xs: $token-font-size-display2 $token-line-height-display2 ),
+  h1: (null: $token-font-size-heading1-mobile $token-line-height-heading1-mobile,
+  xs: $token-font-size-heading1 $token-line-height-heading1 ),
+  h2: (null: $token-font-size-heading2-mobile $token-line-height-heading2-mobile,
+  xs: $token-font-size-heading2 $token-line-height-heading2 ),
+  h3: (null: $token-font-size-heading3-mobile $token-line-height-heading3-mobile,
+  xs: $token-font-size-heading3 $token-line-height-heading3 ),
+  h4: (null: $token-font-size-heading4-mobile $token-line-height-heading4-mobile,
+  xs: $token-font-size-heading4 $token-line-height-heading4 ),
+  h5: (null: $token-font-size-heading5-mobile $token-line-height-heading5-mobile,
+  xs: $token-font-size-heading5 $token-line-height-heading5 ),
+  h6: (null: $token-font-size-heading6-mobile $token-line-height-heading6-mobile,
+  xs: $token-font-size-heading6 $token-line-height-heading6 ),
+  xs: ($token-font-size-text-xs $token-line-height-text-xs ),
+  sm: ($token-font-size-text-sm $token-line-height-text-sm ),
+  md: ($token-font-size-text-md $token-line-height-text-md ),
+  lg: ($token-font-size-text-lg $token-line-height-text-lg ),
+  xl: ($token-font-size-text-xl $token-line-height-text-xl )
+);

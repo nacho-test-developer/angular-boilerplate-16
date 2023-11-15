@@ -1,0 +1,84 @@
+@use "sass:map";
+@use "sass:color";
+@import "../settings/";
+
+$bgfx-namespace: "bgfx";
+$effect-list: (
+  "black": (
+    from: $token-color-black,
+    to: $token-color-transparent
+  ),
+  "black-white": (
+    from: $token-color-black,
+    to: $token-color-white
+  ),
+  "basic": (
+    from: color.adjust($token-color-basic-800, $alpha: -0.6) 100%,
+    to: $token-color-transparent
+  )
+);
+
+.#{$iota-global-utilities-namespace}#{$bgfx-namespace} {
+  &--custom-diagonal {
+    background: {
+      image: linear-gradient(
+        225deg,
+        color.adjust($token-color-black, $alpha: -0.6) 0%,
+        $token-color-transparent 50%,
+        color.adjust($token-color-black, $alpha: -0.6) 100%
+      );
+      repeat: no-repeat;
+      color: $token-color-transparent;
+    }
+  }
+
+  &-black {
+    &--high {
+      background-color: color.adjust($token-color-black, $alpha: -0.4);
+    }
+
+    &--medium {
+      background-color: color.adjust($token-color-black, $alpha: -0.6);
+    }
+
+    &--light {
+      background-color: color.adjust($token-color-black, $alpha: -0.8);
+    }
+  }
+
+  @each $key, $value in $effect-list {
+    &-#{$key} {
+      &--top {
+        background: {
+          image: linear-gradient(0deg, map.get($value, to) 0%, map.get($value, from));
+          repeat: no-repeat;
+          color: map.get($value, to);
+        }
+      }
+
+      &--bottom {
+        background: {
+          image: linear-gradient(180deg, map.get($value, to) 0%, map.get($value, from));
+          repeat: no-repeat;
+          color: map.get($value, to);
+        }
+      }
+
+      &--left {
+        background: {
+          image: linear-gradient(270deg, map.get($value, to) 0%, map.get($value, from));
+          repeat: no-repeat;
+          color: map.get($value, to);
+        }
+      }
+
+      &--right {
+        background: {
+          image: linear-gradient(90deg, map.get($value, to) 0%, map.get($value, from));
+          repeat: no-repeat;
+          color: map.get($value, to);
+        }
+      }
+    }
+  }
+}

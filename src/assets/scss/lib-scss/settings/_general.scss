@@ -1,0 +1,40 @@
+// prefix
+$token-prefix-class: ".w2m";
+
+// commons path
+$token-commons-path: "./commons/commons-assets";
+$token-commons-path-images: "./commons/commons-assets/images" !default;
+$token-commons-path-fonts: "/commons/commons-assets/fonts" !default;
+
+// baseline
+$token-baseline-base: 4px;
+
+// border
+$token-border-radius-xl: 16px;
+$token-border-radius-lg: 12px;
+$token-border-radius-md: 8px;
+$token-border-radius-xs: 4px;
+
+// z-index
+$token-z-index: (
+  full: 999,
+  xl: 40,
+  md: 30,
+  sm: 20,
+  xs: 10,
+  base: 1,
+  none: 0,
+  below: -1
+);
+
+// sizes
+$token-size-percentage-full: 100%;
+
+// Elevations
+$token-shadows-xs: 0 2px 4px hsl(0deg 0% 0% / 20%);
+$token-shadows-md: 0 4px 8px hsl(0deg 0% 0% / 20%);
+$token-shadows-lg: 0 6px 12px hsl(0deg 0% 0% / 20%);
+
+// animations
+$token-transition-base: all 350ms ease-in-out !default;
+$token-transition-slow: all 500ms ease-in-out !default;

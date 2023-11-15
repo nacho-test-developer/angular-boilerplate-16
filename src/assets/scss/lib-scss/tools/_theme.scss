@@ -1,0 +1,5 @@
+@mixin theme {
+  #{$token-prefix-class}-theme {
+    @content;
+  }
+}

@@ -1,0 +1,24 @@
+/* normalize (base) & utility classes */
+@import "../shared";
+
+/* Alternative Font */
+// $token-font-family-alternative: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto,
+//   oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+@import "./dependencies";
+
+:root {
+  --primary-color-900: #{$token-color-plaza-900};
+  --primary-color-700: #{$token-color-plaza-700};
+  --primary-color-500: #{$token-color-plaza-500};
+  --primary-color-300: #{$token-color-plaza-300};
+  --primary-color-100: #{$token-color-plaza-100};
+}
+
+@mixin theme {
+  #{$token-prefix-class}-theme {
+    @include body;
+
+    @content;
+  }
+}

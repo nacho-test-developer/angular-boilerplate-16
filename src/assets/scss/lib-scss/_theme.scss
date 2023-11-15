@@ -1,0 +1,19 @@
+/* normalize (base) & utility classes */
+@import "./shared";
+@import "./themes/dependencies";
+
+:root {
+  --primary-color-900: #{$token-color-900};
+  --primary-color-700: #{$token-color-700};
+  --primary-color-500: #{$token-color-500};
+  --primary-color-300: #{$token-color-300};
+  --primary-color-100: #{$token-color-100};
+}
+
+@mixin theme {
+  #{$token-prefix-class}-theme {
+    @include body;
+
+    @content;
+  }
+}

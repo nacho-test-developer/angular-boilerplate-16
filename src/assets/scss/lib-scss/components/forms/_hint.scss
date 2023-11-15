@@ -1,0 +1,7 @@
+@import "../../shared";
+
+$c-form-hint-name: ".c-form-hint";
+
+#{$c-form-hint-name} {
+  word-break: break-word;
+}

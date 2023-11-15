@@ -1,0 +1,434 @@
+@import "../settings/animation";
+
+$animation-list: (
+  "fadeIn",
+  "fadeInDown",
+  "fadeInDownBig",
+  "fadeInLeft",
+  "fadeInLeftBig",
+  "fadeInRight",
+  "fadeInRightBig",
+  "fadeInUp",
+  "fadeInUpBig",
+  "fadeOut",
+  "fadeOutDown",
+  "fadeOutDownBig",
+  "fadeOutLeft",
+  "fadeOutLeftBig",
+  "fadeOutRight",
+  "fadeOutRightBig",
+  "fadeOutUp",
+  "fadeOutUpBig",
+  "slideInDown",
+  "slideInLeft",
+  "slideInRight",
+  "slideInUp",
+  "slideOutDown",
+  "slideOutLeft",
+  "slideOutRight",
+  "slideOutUp"
+);
+
+// Effects
+
+/* -------------------------------- FADE IN */
+@include keyframes(fadeIn) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@include keyframes(fadeInDown) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateY(-20px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(fadeInDownBig) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateY(-2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(fadeInLeft) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateX(-20px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(fadeInLeftBig) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateX(-2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(fadeInRight) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateX(20px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(fadeInRightBig) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateX(2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(fadeInUp) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateY(20px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(fadeInUpBig) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateY(2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+}
+
+/* -------------------------------- FADE OUT */
+@include keyframes(fadeOut) {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@include keyframes(fadeOutDown) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateY(20px));
+  }
+}
+
+@include keyframes(fadeOutDownBig) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateY(2000px));
+  }
+}
+
+@include keyframes(fadeOutLeft) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateX(-20px));
+  }
+}
+
+@include keyframes(fadeOutLeftBig) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateX(-2000px));
+  }
+}
+
+@include keyframes(fadeOutRight) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateX(20px));
+  }
+}
+
+@include keyframes(fadeOutRightBig) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateX(2000px));
+  }
+}
+
+@include keyframes(fadeOutUp) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateY(-20px));
+  }
+}
+
+@include keyframes(fadeOutUpBig) {
+  0% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateY(-2000px));
+  }
+}
+
+/* -------------------------------- SLIDE IN */
+@include keyframes(slideInDown) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateY(-2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(slideInLeft) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateX(-2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(slideInRight) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateX(2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateX(0));
+  }
+}
+
+@include keyframes(slideInUp) {
+  0% {
+    opacity: 0;
+
+    @include transform(translateY(2000px));
+  }
+
+  100% {
+    opacity: 1;
+
+    @include transform(translateY(0));
+  }
+}
+
+/* -------------------------------- SLIDE OUT */
+@include keyframes(slideOutDown) {
+  0% {
+    @include transform(translateY(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateY(2000px));
+  }
+}
+
+@include keyframes(slideOutLeft) {
+  0% {
+    @include transform(translateX(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateX(-2000px));
+  }
+}
+
+@include keyframes(slideOutRight) {
+  0% {
+    @include transform(translateX(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateX(2000px));
+  }
+}
+
+@include keyframes(slideOutUp) {
+  0% {
+    @include transform(translateY(0));
+  }
+
+  100% {
+    opacity: 0;
+
+    @include transform(translateY(-2000px));
+  }
+}
+
+.#{$iota-global-utilities-namespace} {
+  &animation {
+    @include animation-fill-mode;
+    @include animation-function;
+    @include backface-visibility;
+
+    &:not([class*="u-animation--infinite"]) {
+      &:not([class*="u-animation--repeat-1"]) {
+        @include animation-count;
+      }
+    }
+
+    &:not([class*="u-animation--fast"]) {
+      &:not([class*="u-animation--slow"]) {
+        @include animation-duration;
+      }
+    }
+
+    &:not([class*="u-animation--delay-1s"]) {
+      @include animation-delay;
+    }
+
+    /* -------------------------------- VARIANTS */
+    &--infinite {
+      @include animation-count(infinite);
+    }
+
+    &--repeat-1 {
+      @include animation-count;
+    }
+
+    &--delay-1s {
+      @include animation-delay;
+    }
+
+    &--faster {
+      @include animation-duration($token-animation-duration-faster);
+    }
+
+    &--fast {
+      @include animation-duration($token-animation-duration-fast);
+    }
+
+    &--slow {
+      @include animation-duration($token-animation-duration-slow);
+    }
+
+    &--slower {
+      @include animation-duration($token-animation-duration-slower);
+    }
+
+    /* -------------------------------- TYPES */
+    @each $animation in $animation-list {
+      &-#{$animation} {
+        @include animation-name(#{$animation});
+      }
+    }
+  }
+}

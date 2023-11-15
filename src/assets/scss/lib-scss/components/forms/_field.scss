@@ -1,0 +1,169 @@
+/* Dependencies */
+@import "../../shared";
+@import "../../tools/form";
+
+.#{$c-form-field-name} {
+  /* Default */
+  input,
+  textarea,
+  select {
+    font-family: $token-font-family-primary;
+  }
+
+  /* States */
+  &:not([class~="is-disabled"]) {
+    /* Default */
+    .#{$c-form-field-element} {
+      @include form_element(
+        $token-color-basic-100,
+        $token-color-basic-100,
+        $token-color-black,
+        "input"
+      );
+      @include form_field_hover;
+    }
+
+    /* focus */
+    &.#{$state-focused} {
+      .#{$c-form-field-element}:not([type="checkbox"]) {
+        @include form_field_hover(false);
+
+        background-color: $token-color-white;
+        border-color: $token-color-basic-400;
+        box-shadow: $token-shadows-xs;
+      }
+    }
+
+    /* success */
+    &.#{$state-success} {
+      .#{$c-form-field-hint},
+      .#{$c-form-field-label} {
+        color: $token-color-success-500;
+      }
+      .#{$c-form-field-element} {
+        @include form_element(
+          $token-color-success-100,
+          $token-color-success-500,
+          $token-color-success-500,
+          "input"
+        );
+        @include form_element(
+          $token-color-success-100,
+          $token-color-success-500,
+          $token-color-success-500,
+          "textarea"
+        ); // add new elements
+
+        @include form_field_hover(false);
+      }
+    }
+
+    /* error */
+    &.#{$state-error} {
+      .#{$c-form-field-hint},
+      .#{$c-form-field-label} {
+        color: $token-color-danger-500;
+      }
+      .#{$c-form-field-element} {
+        @include form_element(
+          $token-color-danger-100,
+          $token-color-danger-500,
+          $token-color-danger-500,
+          "input"
+        );
+        @include form_element(
+          $token-color-danger-100,
+          $token-color-danger-500,
+          $token-color-danger-500,
+          "textarea"
+        ); // add new elements
+
+        @include form_field_hover(false);
+      }
+    }
+
+    /* info */
+    &.#{$state-info} {
+      .#{$c-form-field-hint},
+      .#{$c-form-field-label} {
+        color: $token-color-info-500;
+      }
+      .#{$c-form-field-element} {
+        @include form_element(
+          $token-color-info-100,
+          $token-color-info-500,
+          $token-color-info-500,
+          "input"
+        );
+        @include form_element(
+          $token-color-info-100,
+          $token-color-info-500,
+          $token-color-info-500,
+          "textarea"
+        ); // add new elements
+
+        @include form_field_hover(false);
+      }
+    }
+
+    /* warning */
+    &.#{$state-warning} {
+      .#{$c-form-field-hint},
+      .#{$c-form-field-label} {
+        color: $token-color-warning-500;
+      }
+      .#{$c-form-field-element} {
+        @include form_element(
+          $token-color-warning-100,
+          $token-color-warning-500,
+          $token-color-warning-500,
+          "input"
+        );
+        @include form_element(
+          $token-color-warning-100,
+          $token-color-warning-500,
+          $token-color-warning-500,
+          "textarea"
+        ); // add new elements
+
+        @include form_field_hover(false);
+      }
+    }
+
+    /* Placeholder */
+    input,
+    textarea {
+      @include placeholder($token-color-basic-800);
+    }
+  }
+
+  &.#{$state-disabled} {
+    .#{$c-form-field-hint},
+    .#{$c-form-field-label} {
+      color: $token-color-basic-400;
+    }
+    .#{$c-form-field-element} {
+      @include form_element(
+        $token-color-basic-100,
+        $token-color-basic-100,
+        $token-color-basic-400,
+        "input"
+      );
+      @include form_element(
+        $token-color-basic-100,
+        $token-color-basic-100,
+        $token-color-basic-400,
+        ".ui-select__input"
+      ); // add new elements
+    }
+
+    svg {
+      opacity: 0.2;
+    }
+
+    /* prevent actions */
+    > * {
+      pointer-events: none;
+    }
+  }
+}

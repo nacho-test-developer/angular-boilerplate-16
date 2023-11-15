@@ -1,0 +1,90 @@
+@import "../settings/general";
+@import "../settings/type";
+
+/**
+ * @license
+ * MyFonts Webfont Build ID 3576376, 2018-05-07T11:48:26-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: Foco-Bold by Dalton Maag
+ * URL: https://www.myfonts.com/fonts/daltonmaag/foco/bold/
+ *
+ * Webfont: Foco-Italic by Dalton Maag
+ * URL: https://www.myfonts.com/fonts/daltonmaag/foco/italic/
+ *
+ * Webfont: Foco-Light by Dalton Maag
+ * URL: https://www.myfonts.com/fonts/daltonmaag/foco/light/
+ *
+ * Webfont: Foco-Regular by Dalton Maag
+ * URL: https://www.myfonts.com/fonts/daltonmaag/foco/regular/
+ *
+ *
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3576376
+ * Licensed pageviews: Unlimited
+ * Webfonts copyright: Copyright 2017 Dalton Maag Ltd.
+ * Modification of this file requires prior written permission from Dalton Maag Ltd.
+ *
+ * © 2018 MyFonts Inc
+*/
+
+// update the new version eg: v1.1
+$icon-version: "v1.2";
+
+@font-face {
+  font-family: Foco;
+  src: url("#{$token-commons-path-fonts}/foco/369238_3_0.eot");
+  src:
+    url("#{$token-commons-path-fonts}/foco/369238_3_0.eot?#iefix") format("embedded-opentype"),
+    url("#{$token-commons-path-fonts}/foco/369238_3_0.woff2") format("woff2"),
+    url("#{$token-commons-path-fonts}/foco/369238_3_0.woff") format("woff"),
+    url("#{$token-commons-path-fonts}/foco/369238_3_0.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* LE GRAND */
+@font-face {
+  font-family: "Le Grand";
+  src:
+    url("#{$token-commons-path-fonts}/legrand/LeGrandRegular-Regular.woff2") format("woff2"),
+    url("#{$token-commons-path-fonts}/legrand/LeGrandRegular-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Le Grand";
+  src:
+    url("#{$token-commons-path-fonts}/legrand/LeGrandBold-Regular.woff2") format("woff2"),
+    url("#{$token-commons-path-fonts}/legrand/LeGrandBold-Regular.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Le Grand";
+  src:
+    url("#{$token-commons-path-fonts}/legrand/LeGrandItalic-Regular.woff2") format("woff2"),
+    url("#{$token-commons-path-fonts}/legrand/LeGrandItalic-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ICONS */
+@font-face {
+  font-family: ui-icon-font;
+  src: url("#{$token-commons-path-fonts}/icons-v2/#{$icon-version}/ui-icon-font.eot");
+  src:
+    url("#{$token-commons-path-fonts}/icons-v2/#{$icon-version}/ui-icon-font.ttf") format("truetype"),
+    url("#{$token-commons-path-fonts}/icons-v2/#{$icon-version}/ui-icon-font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

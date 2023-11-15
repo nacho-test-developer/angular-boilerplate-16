@@ -1,0 +1,7 @@
+@import "../../shared";
+
+$c-form-label-name: ".c-form-label";
+
+#{$c-form-label-name} {
+  word-break: break-word;
+}

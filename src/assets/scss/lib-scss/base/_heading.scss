@@ -1,0 +1,68 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include heading;
+}
+
+h1 {
+  @if $ds-v2 {
+    @include iota-type(map-get($iota-objs-type-sizes, "h1"));
+    @include verticalRhythm("h1");
+  } @else {
+    @include type(heading, 1);
+  }
+}
+
+h2 {
+  @if $ds-v2 {
+    @include iota-type(map-get($iota-objs-type-sizes, "h2"));
+    @include verticalRhythm("h2");
+  } @else {
+    @include type(heading, 2);
+  }
+}
+
+h3 {
+  @if $ds-v2 {
+    @include iota-type(map-get($iota-objs-type-sizes, "h3"));
+    @include verticalRhythm("h3");
+  } @else {
+    @include type(heading, 3);
+  }
+}
+
+h4 {
+  @if $ds-v2 {
+    @include iota-type(map-get($iota-objs-type-sizes, "h4"));
+    @include verticalRhythm("h4");
+  } @else {
+    @include type(heading, 4);
+  }
+}
+
+h5 {
+  @if $ds-v2 {
+    @include iota-type(map-get($iota-objs-type-sizes, "h5"));
+    @include verticalRhythm("h5");
+  } @else {
+    @include type(heading, 5);
+  }
+}
+
+h6 {
+  @if $ds-v2 {
+    @include iota-type(map-get($iota-objs-type-sizes, "h6"));
+    @include verticalRhythm("h6");
+  } @else {
+    @include type(heading, 6);
+  }
+}
+
+@if $ds-v2 {
+  p {
+    margin-bottom: 1rem;
+  }
+}

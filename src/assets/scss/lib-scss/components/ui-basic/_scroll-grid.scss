@@ -1,0 +1,90 @@
+/* Structure:
+  - dependencies
+  - local vars
+  - default
+  - slots
+  - ui-color
+  - ui-size
+  - ui-type
+*/
+
+/* Dependencies */
+@import "../../shared";
+
+/* Local vars */
+$c-tag-name: "c-scroll-grid";
+
+.#{$c-tag-name} {
+  overflow: auto;
+  position: relative;
+
+  .o-grid {
+    min-width: fit-content;
+    flex-wrap: nowrap;
+
+    .o-grid__col {
+      min-width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  /* sizes */
+  &:not([ui-size]),
+  &[ui-size~="xs"] {
+    @include iota-breakpoint("xs") {
+      .o-grid {
+        flex-wrap: wrap;
+
+        .o-grid__col {
+          min-width: auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &[ui-size~="sm"] {
+    @include iota-breakpoint("xs") {
+      .o-grid__col {
+        min-width: 60%;
+      }
+    }
+
+    @include iota-breakpoint("sm") {
+      .o-grid {
+        flex-wrap: wrap;
+
+        .o-grid__col {
+          min-width: auto;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &[ui-size~="md"] {
+    @include iota-breakpoint("xs") {
+      .o-grid__col {
+        min-width: 60%;
+      }
+    }
+
+    @include iota-breakpoint("sm") {
+      .o-grid__col {
+        min-width: 40%;
+      }
+    }
+
+    @include iota-breakpoint("md") {
+      .o-grid {
+        flex-wrap: wrap;
+
+        .o-grid__col {
+          min-width: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}

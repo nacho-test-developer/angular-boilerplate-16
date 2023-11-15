@@ -1,0 +1,12 @@
+$iota-prefix-auto-width: (
+  $iota-utils-display-var-display + $iota-utils-width + $iota-global-breakpoint-separator
+);
+
+/* IOTA - extra */
+@each $breakpoint-name, $breakpoint-size in $iota-utils-display-breakpoints {
+  @media #{$breakpoint-size} {
+    .#{$iota-prefix-auto-width + $breakpoint-name} {
+      width: auto !important;
+    }
+  }
+}

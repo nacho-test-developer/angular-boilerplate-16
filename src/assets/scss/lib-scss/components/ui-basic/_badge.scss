@@ -1,0 +1,42 @@
+/* Structure:
+  - dependencies
+  - local vars
+  - default
+  - slots
+  - ui-color
+  - ui-size
+  - ui-type
+*/
+
+/* Dependencies */
+@import "../../shared";
+@import "../../tools/button";
+
+/* Local vars */
+$c-tag-name: "c-badge";
+
+@include basicsVisualComponents($c-tag-name);
+
+.#{$c-tag-name} {
+  border-radius: $token-baseline-base;
+
+  /* Type */
+  &[ui-type~="square"] {
+    &:not([ui-size]),
+    &[ui-size~="xs"] {
+      @include basicVisualComponentsSizes(xs, xs, xs);
+    }
+
+    &[ui-size~="sm"] {
+      @include basicVisualComponentsSizes(sm, sm, sm);
+    }
+
+    &[ui-size~="md"] {
+      @include basicVisualComponentsSizes(md, md, md);
+    }
+
+    &[ui-size~="lg"] {
+      @include basicVisualComponentsSizes(lg, lg, lg);
+    }
+  }
+}

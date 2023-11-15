@@ -1,0 +1,28 @@
+@import "../settings/type";
+@import "../_iotacss/modules/iotacss-objs-type/objects.type";
+
+// vertical rhythm (heading)
+@each $type in (h1 h2 h3 h4 h5 h6) {
+  .o-type-#{$type} {
+    @include verticalRhythm($type);
+  }
+}
+
+// vertical rhythm (display)
+@each $type in (display-1 display-2) {
+  .o-#{$type} {
+    @include iota-type(map-get($iota-objs-type-sizes, #{$type}));
+
+    letter-spacing: 0;
+    word-break: break-word;
+  }
+}
+
+/* RIU object */
+.o-type-primary {
+  font-family: $token-font-family-primary;
+}
+
+.o-type-alt {
+  font-family: $token-font-family-alternative;
+}

@@ -1,0 +1,7 @@
+$token-animation-duration: 1s;
+$token-animation-duration-slow: calc($token-animation-duration * 2); // 2s
+$token-animation-duration-slower: calc($token-animation-duration * 3); // 3s
+$token-animation-duration-fast: calc($token-animation-duration * 0.8); // 0.8s
+$token-animation-duration-faster: calc($token-animation-duration / 3.3); // 0.3s
+$token-animation-delay: 0.2s;
+$token-animation-repeat: 1;

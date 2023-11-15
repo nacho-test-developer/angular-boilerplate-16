@@ -1,0 +1,244 @@
+/* TYPOGRAPHY */
+@mixin type($type: null, $value: null) {
+  @if $type == 'small' {
+    @include iota-type($token-font-size-small);
+  } @else if $type == 'heading' {
+    @if $value == 1 {
+      @include iota-type($token-font-size-heading1);
+    } @else if $value == 2 {
+      @include iota-type($token-font-size-heading2);
+    } @else if $value == 3 {
+      @include iota-type($token-font-size-heading3);
+    } @else if $value == 4 {
+      @include iota-type($token-font-size-heading4);
+    } @else if $value == 5 {
+      @include iota-type($token-font-size-heading5);
+    } @else if $value == 6 {
+      @include iota-type($token-font-size-heading6);
+    } @else {
+      @include iota-type($token-font-size-heading6);
+    }
+  } @else if $type == 'display' {
+    @if $value == 1 {
+      @include iota-type($token-font-size-display1);
+    } @else if $value == 2 {
+      @include iota-type($token-font-size-display2);
+    } @else if $value == 3 {
+      @include iota-type($token-font-size-display3);
+    } @else {
+      @include iota-type($token-font-size-display3);
+    }
+  } @else {
+    @include iota-type($token-font-size-body);
+  }
+}
+
+/* VERTICAL RHYTHM */
+@mixin verticalRhythm($el) {
+  @each $h in $el {
+    margin-bottom: map-get($iota-vertical-rhythm, $h, null);
+
+    @include iota-breakpoint('xs') {
+      margin-bottom: map-get($iota-vertical-rhythm, $h, 'xs');
+    }
+  }
+}
+
+/* BODY */
+@mixin body() {
+  @if $ds-v2 {
+    @include iota-type($token-font-size-text-md $token-line-height-text-md);
+
+    color: $token-color-default;
+    font: {
+      family: $token-font-family-primary;
+      weight: $token-font-weight-regular;
+    }
+  } @else {
+    @include type();
+
+    color: $token-color-black;
+    font: {
+      family: $token-font-family-primary;
+      weight: $token-font-weight-medium;
+    }
+
+    font-size-adjust: $token-font-size-adjust;
+    line-height: $token-line-height-body;
+  }
+}
+
+/* HEADING */
+@mixin heading() {
+  @if $ds-v2 {
+    font-weight: $token-font-weight-regular;
+  } @else {
+    font-weight: $token-font-weight-semibold;
+    line-height: $token-line-height-heading;
+  }
+  letter-spacing: 0;
+  word-break: break-word;
+}
+
+/* PLACEHOLDER */
+@mixin placeholder($color) {
+  &::placeholder{
+    color: $color;
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+/* PREFIX */
+@mixin prefix($property, $value, $prefixes: (webkit ms moz)) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+/* 1x1 */
+@mixin squareSize($size) {
+  height: $size;
+  width: $size;
+}
+
+/* ui-basics-components */
+@mixin basicVisualComponentsSizes($paddingV, $paddingH, $fontSize) {
+  padding: {
+    bottom: map-get($iota-media-extra, $paddingV);
+    left: map-get($iota-media-extra, $paddingH);
+    right: map-get($iota-media-extra, $paddingH);
+    top: map-get($iota-media-extra, $paddingV);
+  }
+  @include iota-type(map-get($iota-objs-type-sizes, $fontSize));
+}
+
+@mixin basicsVisualComponents($component) {
+  .#{$component} {
+    /* Default */
+    border: {
+      width: 1px;
+      style: solid;
+    }
+    display: flex;
+    font-weight: $token-font-weight-bold;
+    width: fit-content;
+
+    /* Color */
+    &[ui-color~='primary'] {
+      @include button_color_generate(var(--primary-color-500), var(--primary-color-500));
+    }
+
+    &:not([ui-color]),
+    &[ui-color~='secondary'] {
+      @include button_color_generate($token-color-secondary-500, $token-color-secondary-500);
+    }
+
+    &[ui-color~='riu'] {
+      @include button_color_generate($token-color-500, $token-color-500);
+    }
+
+    &[ui-color~='plaza'] {
+      @include button_color_generate($token-color-plaza-500, $token-color-plaza-500);
+    }
+
+    &[ui-color~='palace'] {
+      @include button_color_generate($token-color-palace-500, $token-color-palace-500);
+    }
+
+    &[ui-color~='party'] {
+      @include button_color_generate($token-color-party-500, $token-color-party-500);
+    }
+
+    &[ui-color~='white'] {
+      @include button_color_generate(
+        $token-color-white,
+        $token-color-white,
+        $token-color-basic-800
+      );
+    }
+
+    &[ui-color~='white-outline'] {
+      @include button_color_generate(null, $token-color-white, $token-color-white);
+    }
+
+    &[ui-color~='secondary-outline'] {
+      @include button_color_generate(null, $token-color-basic-800, $token-color-basic-800);
+    }
+
+    /* state */
+    &.is-success {
+      @include button_color_generate($token-color-success-500, $token-color-success-500);
+    }
+    &.is-error {
+      @include button_color_generate($token-color-danger-500, $token-color-danger-500);
+    }
+    &.is-info {
+      @include button_color_generate($token-color-info-500, $token-color-info-500);
+    }
+    &.is-warning {
+      @include button_color_generate($token-color-warning-500, $token-color-warning-500);
+    }
+
+    /* Size */
+    &[ui-size~='xs'] {
+      @include basicVisualComponentsSizes(xs, sm, xs);
+    }
+    &:not([ui-size]),
+    &[ui-size~='sm'] {
+      @include basicVisualComponentsSizes(xs, sm, sm);
+    }
+
+    &[ui-size~='md'] {
+      @include basicVisualComponentsSizes(xs, md, md);
+    }
+
+    &[ui-size~='lg'] {
+      @include basicVisualComponentsSizes(xs, md, lg);
+    }
+  }
+}
+
+
+@mixin backface-visibility($visibility: hidden) {
+  -webkit-backface-visibility: $visibility;
+     -moz-backface-visibility: $visibility;
+      -ms-backface-visibility: $visibility;
+       -o-backface-visibility: $visibility;
+          backface-visibility: $visibility;
+}
+
+@mixin transform($property) {
+  -webkit-transform: $property;
+     -moz-transform: $property;
+      -ms-transform: $property;
+       -o-transform: $property;
+          transform: $property;
+}
+
+@mixin transform-origin($transform-origin: center center) {
+  -webkit-transform-origin: $transform-origin;
+     -moz-transform-origin: $transform-origin;
+      -ms-transform-origin: $transform-origin;
+       -o-transform-origin: $transform-origin;
+          transform-origin: $transform-origin;
+}
+
+@mixin transform-style($transform-style: flat) {
+  -webkit-transform-style: $transform-style;
+     -moz-transform-style: $transform-style;
+       -o-transform-style: $transform-style;
+          transform-style: $transform-style;
+}
+

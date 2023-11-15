@@ -1,0 +1,138 @@
+$token-color-transparent: transparent;
+
+// Brand
+$token-color-900: hsl(349deg 100% 27%);
+$token-color-700: hsl(349deg 100% 40%);
+$token-color-500: hsl(349deg 100% 45%);
+$token-color-300: hsl(349deg 81% 78%);
+$token-color-100: hsl(349deg 79% 95%);
+$token-color-palace-900: hsl(39deg 25% 37%);
+$token-color-palace-700: hsl(39deg 32% 52%);
+$token-color-palace-500: hsl(39deg 41% 62%);
+$token-color-palace-300: hsl(39deg 41% 85%);
+$token-color-palace-100: hsl(45deg 40% 96%);
+$token-color-plaza-900: hsl(265deg 35% 36%);
+$token-color-plaza-700: hsl(266deg 39% 53%);
+$token-color-plaza-500: hsl(265deg 51% 60%);
+$token-color-plaza-300: hsl(266deg 51% 84%);
+$token-color-plaza-100: hsl(267deg 52% 96%);
+$token-color-party-900: hsl(325deg 100% 36%);
+$token-color-party-700: hsl(325deg 100% 40%);
+$token-color-party-500: hsl(325deg 100% 45%);
+$token-color-party-300: hsl(325deg 81% 56%);
+$token-color-party-100: hsl(325deg 81% 67%);
+
+// Operative (default)
+$token-color-primary-900: var(--primary-color-900) !default;
+$token-color-primary-700: var(--primary-color-700) !default;
+$token-color-primary-500: var(--primary-color-500) !default;
+$token-color-primary-300: var(--primary-color-300) !default;
+$token-color-primary-100: var(--primary-color-100) !default;
+$token-color-weddings-900: hsl(349deg 61% 61%);
+$token-color-weddings-700: hsl(349deg 71% 61%);
+$token-color-weddings-500: hsl(349deg 81% 61%);
+$token-color-weddings-300: hsl(349deg 81% 71%);
+$token-color-weddings-100: hsl(349deg 81% 81%);
+
+// Secondary
+$token-color-secondary-900: hsl(200deg 6% 9%);
+$token-color-secondary-700: hsl(204deg 7% 14%);
+$token-color-secondary-500: hsl(204deg 6% 15%);
+$token-color-secondary-300: hsl(210deg 1% 66%);
+$token-color-secondary-100: hsl(180deg 2% 92%);
+
+// Basic
+$token-color-basic-800: hsl(210deg 10% 23%);
+$token-color-basic-600: hsl(208deg 7% 46%);
+$token-color-basic-400: hsl(210deg 14% 83%);
+$token-color-basic-200: hsl(210deg 16% 93%);
+$token-color-basic-100: hsl(240deg 5% 96%);
+$token-color-white: hsl(0deg 0% 100%);
+$token-color-black: hsl(359deg 100% 0%);
+
+// System
+$token-color-success-900: hsl(152deg 82% 19%);
+$token-color-success-700: hsl(152deg 81% 30%);
+$token-color-success-500: hsl(152deg 82% 39%);
+$token-color-success-300: hsl(152deg 53% 76%);
+$token-color-success-100: hsl(152deg 55% 94%);
+$token-color-danger-900: hsl(34deg 94% 25%);
+$token-color-danger-700: hsl(34deg 93% 38%);
+$token-color-danger-500: hsl(34deg 94% 50%);
+$token-color-danger-300: hsl(34deg 94% 80%);
+$token-color-danger-100: hsl(35deg 92% 95%);
+$token-color-warning-900: hsl(46deg 85% 26%);
+$token-color-warning-700: hsl(46deg 84% 40%);
+$token-color-warning-500: hsl(46deg 96% 53%);
+$token-color-warning-300: hsl(46deg 96% 81%);
+$token-color-warning-100: hsl(44deg 100% 95%);
+$token-color-info-900: hsl(199deg 92% 24%);
+$token-color-info-700: hsl(199deg 91% 36%);
+$token-color-info-500: hsl(199deg 91% 48%);
+$token-color-info-300: hsl(199deg 85% 79%);
+$token-color-info-100: hsl(199deg 85% 95%);
+
+// Body
+$token-color-default: $token-color-basic-800;
+
+// Map
+$iota-color-list: (
+  900: $token-color-900,
+  700: $token-color-700,
+  riu: $token-color-500,
+  300: $token-color-300,
+  100: $token-color-100,
+  primary-900: $token-color-primary-900,
+  primary-700: $token-color-primary-700,
+  primary: $token-color-primary-500,
+  primary-300: $token-color-primary-300,
+  primary-100: $token-color-primary-100,
+  secondary-900: $token-color-secondary-900,
+  secondary-700: $token-color-secondary-700,
+  secondary: $token-color-secondary-500,
+  secondary-300: $token-color-secondary-300,
+  secondary-100: $token-color-secondary-100,
+  plaza-900: $token-color-plaza-900,
+  plaza-700: $token-color-plaza-700,
+  plaza: $token-color-plaza-500,
+  plaza-300: $token-color-plaza-300,
+  plaza-100: $token-color-plaza-100,
+  palace-900: $token-color-palace-900,
+  palace-700: $token-color-palace-700,
+  palace: $token-color-palace-500,
+  palace-300: $token-color-palace-300,
+  palace-100: $token-color-palace-100,
+  party-900: $token-color-party-900,
+  party-700: $token-color-party-700,
+  party: $token-color-party-500,
+  party-300: $token-color-party-300,
+  party-100: $token-color-party-100,
+  success-900: $token-color-success-900,
+  success-700: $token-color-success-700,
+  success: $token-color-success-500,
+  success-300: $token-color-success-300,
+  success-100: $token-color-success-100,
+  danger-900: $token-color-danger-900,
+  danger-700: $token-color-danger-700,
+  danger: $token-color-danger-500,
+  danger-300: $token-color-danger-300,
+  danger-100: $token-color-danger-100,
+  warning-900: $token-color-warning-900,
+  warning-700: $token-color-warning-700,
+  warning: $token-color-warning-500,
+  warning-300: $token-color-warning-300,
+  warning-100: $token-color-warning-100,
+  info-900: $token-color-info-900,
+  info-700: $token-color-info-700,
+  info: $token-color-info-500,
+  info-300: $token-color-info-300,
+  info-100: $token-color-info-100,
+  basic-800: $token-color-basic-800,
+  basic-600: $token-color-basic-600,
+  basic-400: $token-color-basic-400,
+  basic-200: $token-color-basic-200,
+  basic-100: $token-color-basic-100,
+  white: $token-color-white,
+  black: $token-color-black,
+  transparent: $token-color-transparent
+);

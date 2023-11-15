@@ -1,0 +1,35 @@
+/* Structure:
+  - dependencies
+  - local vars
+  - default
+*/
+
+/* Dependencies */
+@use "sass:map";
+@import "../../shared";
+
+$c-tag-name: "c-section";
+$page-spacing-desktop: (map.get($iota-media-extra, "xxl") * 2);
+$page-spacing-tablet: map.get($iota-media-extra, "xxl");
+$page-spacing-mobile: map.get($iota-media-extra, "xl");
+
+.#{$c-tag-name} {
+  padding: {
+    top: $page-spacing-mobile;
+    bottom: $page-spacing-mobile;
+  }
+
+  @include iota-breakpoint(xs) {
+    padding: {
+      top: $page-spacing-tablet;
+      bottom: $page-spacing-tablet;
+    }
+  }
+
+  @include iota-breakpoint(sm) {
+    padding: {
+      top: $page-spacing-desktop;
+      bottom: $page-spacing-desktop;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+/* Structure:
+  - dependencies
+  - local vars
+  - default
+  - ui-size
+*/
+
+/* Dependencies */
+@import "../../shared";
+
+/* Local vars */
+$c-tag-name: "c-divider";
+
+.#{$c-tag-name} {
+  border: none;
+
+  &:not([ui-size]),
+  &[ui-size="xs"] {
+    height: 1px;
+  }
+}

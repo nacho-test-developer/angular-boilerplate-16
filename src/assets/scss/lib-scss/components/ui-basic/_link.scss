@@ -1,0 +1,126 @@
+/* Dependencies */
+@use "sass:map";
+@import "../../shared";
+@import "../../tools/button";
+
+/* Local vars */
+$c-tag-name: "c-link";
+
+@mixin link-color($color) {
+  color: $color;
+
+  &:hover,
+  &.is-active {
+    border-bottom-color: $color;
+  }
+}
+
+@mixin link-size($padding, $fontSize) {
+  @include iota-type(map.get($iota-objs-type-sizes, $fontSize));
+
+  padding: {
+    bottom: map.get($spacing, $padding);
+    top: map.get($spacing, $padding);
+  }
+}
+
+.#{$c-tag-name} {
+  cursor: pointer;
+  font-weight: $token-font-weight-bold;
+  text-decoration: none;
+  width: fit-content;
+  position: relative;
+  border-bottom: 1px solid transparent;
+  display: inline;
+
+  > * {
+    vertical-align: middle;
+    margin-bottom: $token-baseline-base;
+  }
+
+  & ui-icon {
+    &[ui-size~="xs"] {
+      margin-bottom: 0;
+    }
+  }
+
+  &:visited {
+    opacity: 0.75;
+  }
+
+  /* sizes */
+  &[ui-size~="sm"] {
+    @include link-size(1, "sm");
+  }
+
+  &[ui-size~="md"] {
+    @include link-size(1, "md");
+  }
+
+  &[ui-size~="lg"] {
+    @include link-size(2, "lg");
+  }
+
+  &[ui-size~="xl"] {
+    @include link-size(2, "xl");
+
+    border-bottom-width: calc($token-baseline-base / 2);
+  }
+
+  &[ui-size~="xxl"] {
+    @include link-size(2, "h6");
+
+    border-bottom-width: calc($token-baseline-base / 2);
+  }
+
+  /* colors */
+  &:not([ui-color]),
+  &[ui-color="primary"] {
+    @include link-color(var(--primary-color-500));
+  }
+
+  &[ui-color="riu"] {
+    @include link-color($token-color-500);
+  }
+
+  &[ui-color="basic"] {
+    @include link-color($token-color-default);
+  }
+
+  &[ui-color="secondary"] {
+    @include link-color($token-color-secondary-500);
+  }
+
+  &[ui-color="plaza"] {
+    @include link-color($token-color-plaza-500);
+  }
+
+  &[ui-color="palace"] {
+    @include link-color($token-color-palace-500);
+  }
+
+  &[ui-color="party"] {
+    @include link-color($token-color-party-500);
+  }
+
+  &[ui-color="white"] {
+    @include link-color($token-color-white);
+  }
+
+  /* state */
+  &.is-success {
+    @include link-color($token-color-success-500);
+  }
+
+  &.is-error {
+    @include link-color($token-color-danger-500);
+  }
+
+  &.is-info {
+    @include link-color($token-color-info-500);
+  }
+
+  &.is-warning {
+    @include link-color($token-color-warning-500);
+  }
+}

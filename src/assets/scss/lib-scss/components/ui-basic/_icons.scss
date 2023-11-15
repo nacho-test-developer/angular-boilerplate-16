@@ -1,0 +1,214 @@
+/* Component styles */
+@use "sass:map";
+
+/* Structure:
+  - dependencies
+  - local vars
+  - default
+  - sizes
+*/
+
+/* Dependencies */
+@import "../../shared";
+@import "../../tools/mixins";
+
+/* Local vars */
+$c-tag-name: ui-icon;
+$c-icon-size: (
+  xs: 18px,
+  sm: 20px,
+  md: 24px,
+  lg: 27px,
+  xl: 30px,
+  xxl: 40px,
+  xxxl: 56px,
+  xxxxl: 80px
+);
+$c-icon-font-size: (
+  xs: calc($token-font-size-text-xs + 6px),
+  sm: calc($token-font-size-text-sm + 6px),
+  md: calc($token-font-size-text-md + 8px),
+  lg: calc($token-font-size-text-lg + 8px),
+  xl: calc($token-font-size-text-xl + 10px),
+  xxl: calc($token-font-size-heading5 + 10px),
+  xxxl: calc($token-font-size-heading2 + 8px),
+  xxxxl: calc($token-font-size-heading1 + 20px)
+);
+$c-icon-color: (
+  "primary": var(--primary-color-500),
+  "secondary": $token-color-basic-800,
+  "basic": $token-color-basic-600,
+  "riu": $token-color-500,
+  "palace": $token-color-palace-500,
+  "plaza": $token-color-plaza-500,
+  "party": $token-color-party-500,
+  "warning": $token-color-warning-500,
+  "success": $token-color-success-500,
+  "danger": $token-color-danger-500,
+  "info": $token-color-info-500,
+  "white": $token-color-white
+);
+$icon-list: (
+  "icon-vista360": "\ea01",
+  "icon-ac": "\ea02",
+  "icon-bed": "\ea03",
+  "icon-booking": "\ea04",
+  "icon-bride": "\ea05",
+  "icon-calendar": "\ea06",
+  "icon-checkin": "\ea07",
+  "icon-compare": "\ea08",
+  "icon-computer": "\ea09",
+  "icon-dashboard": "\ea0a",
+  "icon-dot": "\ea0b",
+  "icon-flag": "\ea0c",
+  "icon-food": "\ea0d",
+  "icon-gift": "\ea0e",
+  "icon-guest": "\ea0f",
+  "icon-headphones": "\ea10",
+  "icon-help": "\ea11",
+  "icon-image": "\ea12",
+  "icon-logout": "\ea13",
+  "icon-map-planet": "\ea14",
+  "icon-map-pointer": "\ea15",
+  "icon-phone": "\ea16",
+  "icon-plane": "\ea17",
+  "icon-planet": "\ea18",
+  "icon-play": "\ea19",
+  "icon-points": "\ea1a",
+  "icon-price": "\ea1b",
+  "icon-print": "\ea1c",
+  "icon-reservation": "\ea1d",
+  "icon-resize": "\ea1e",
+  "icon-ring": "\ea1f",
+  "icon-riu": "\ea20",
+  "icon-safety": "\ea21",
+  "icon-search": "\ea22",
+  "icon-squares": "\ea23",
+  "icon-star": "\ea24",
+  "icon-suit": "\ea25",
+  "icon-tag": "\ea26",
+  "icon-ticket": "\ea27",
+  "icon-timer": "\ea28",
+  "icon-trash": "\ea29",
+  "icon-tripadvisor": "\ea2a",
+  "icon-user": "\ea2b",
+  "icon-welcome": "\ea2c",
+  "icon-arrow-diagonal": "\ea2d",
+  "icon-arrow-left": "\ea2e",
+  "icon-arrow-up": "\ea2f",
+  "icon-check": "\ea30",
+  "icon-chevron-down": "\ea31",
+  "icon-chevron-left": "\ea32",
+  "icon-chevron-left-double": "\ea33",
+  "icon-chevron-right": "\ea34",
+  "icon-chevron-right-double": "\ea35",
+  "icon-chevron-up": "\ea36",
+  "icon-close": "\ea37",
+  "icon-download": "\ea38",
+  "icon-enlarge": "\ea39",
+  "icon-home": "\ea3a",
+  "icon-loading": "\ea3b",
+  "icon-mail": "\ea3c",
+  "icon-menu": "\ea3d",
+  "icon-minus": "\ea3e",
+  "icon-moon": "\ea3f",
+  "icon-password": "\ea40",
+  "icon-plus": "\ea41",
+  "icon-question": "\ea42",
+  "icon-watch": "\ea43",
+  "icon-apple": "\ea44",
+  "icon-blogger": "\ea45",
+  "icon-facebook": "\ea46",
+  "icon-flickr": "\ea47",
+  "icon-instagram": "\ea48",
+  "icon-pinterest": "\ea49",
+  "icon-playstore": "\ea4a",
+  "icon-tiktok": "\ea4b",
+  "icon-youtube": "\ea4c",
+  "icon-filter": "\ea4d",
+  "icon-bed-outline": "\ea4e",
+  "icon-rooms": "\ea4f",
+  "icon-hotel": "\ea50",
+  "icon-world": "\ea51",
+  "icon-info-circle": "\ea52",
+  "icon-initial-square": "\ea53",
+  "icon-eye-disabled": "\ea54",
+  "icon-copy": "\ea55",
+  "icon-script": "\ea56",
+  "icon-arrow-right": "\ea57",
+  "icon-initial": "\ea58",
+  "icon-upload": "\ea59",
+  "icon-import-file": "\ea5a",
+  "icon-edit": "\ea5b",
+  "icon-sound-off": "\ea5c",
+  "icon-sound-on": "\ea5d",
+  "icon-map": "\ea5e",
+  "icon-twitter": "\ea5f"
+);
+
+#{$c-tag-name} {
+  /* Default */
+  display: inline-block;
+  line-height: initial;
+  overflow: hidden;
+
+  .#{$c-tag-name} {
+    font-family: ui-icon-font, serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: $token-font-weight-regular;
+    text-transform: none;
+    vertical-align: initial;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &:not([ui-color]) {
+    .#{$c-tag-name}::before {
+      color: currentcolor;
+    }
+  }
+
+  &:not([ui-size]) {
+    @include squareSize(map.get($c-icon-size, "md"));
+
+    .#{$c-tag-name} {
+      &::before {
+        font-size: map.get($c-icon-font-size, "md");
+      }
+    }
+  }
+
+  /* Naming */
+  @each $name, $glyph in $icon-list {
+    .#{$name}::before {
+      content: $glyph;
+    }
+  }
+
+  /* Sizes */
+  @each $key, $size in $c-icon-size {
+    &[ui-size='#{$key}'] {
+      min-width: $size;
+
+      @include squareSize($size);
+
+      .#{$c-tag-name} {
+        &::before {
+          font-size: map.get($c-icon-font-size, $key);
+        }
+      }
+    }
+  }
+
+  /* Colors */
+  @each $key, $color in $c-icon-color {
+    &[ui-color='#{$key}'] {
+      .#{$c-tag-name} {
+        color: $color;
+      }
+    }
+  }
+}

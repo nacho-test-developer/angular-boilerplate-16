@@ -1,0 +1,93 @@
+@use "sass:map";
+@import "../../../assets/scss/lib-scss/shared";
+
+$view-v2-name: ".view-v2";
+
+:host {
+  .styles__example {
+    border-top: 1px solid $token-color-primary-500;
+    padding-top: 80px;
+    margin-top: 80px;
+  }
+
+  #{$view-v2-name} {
+    &__border {
+      width: 56px;
+    }
+
+    &__spacing {
+      height: 110px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        vertical-align: middle;
+      }
+
+      &--1 {
+        &::before {
+          inset: map.get($spacing, 1);
+        }
+      }
+
+      &--2 {
+        &::before {
+          inset: map.get($spacing, 2);
+        }
+      }
+
+      &--3 {
+        &::before {
+          inset: map.get($spacing, 3);
+        }
+      }
+
+      &--4 {
+        &::before {
+          inset: map.get($spacing, 4);
+        }
+      }
+
+      &--5 {
+        &::before {
+          inset: map.get($spacing, 5);
+        }
+      }
+
+      &--6 {
+        &::before {
+          inset: map.get($spacing, 6);
+        }
+      }
+
+      &--8 {
+        &::before {
+          inset: map.get($spacing, 8);
+        }
+      }
+
+      &--12 {
+        &::before {
+          inset: map.get($spacing, 12);
+        }
+      }
+    }
+
+    &__padding {
+      background-color: $token-color-primary-100;
+
+      &::before {
+        background-color: $token-color-basic-400;
+      }
+    }
+
+    &__margin {
+      background-color: $token-color-basic-400;
+
+      &::before {
+        background-color: $token-color-primary-100;
+      }
+    }
+  }
+}

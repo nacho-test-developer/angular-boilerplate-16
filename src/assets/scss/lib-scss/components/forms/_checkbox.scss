@@ -1,0 +1,130 @@
+/* Dependencies */
+@import "../../shared";
+@import "../../tools/form";
+
+/* form-field 'small' = radio-button & checkbox */
+$c-form-field-small: "#{$c-form-field-name}--small";
+
+@mixin form-field-state($color) {
+  .#{$c-form-field-hint},
+  .#{$c-form-field-helper},
+  .#{$c-form-field-label} {
+    color: $color;
+  }
+  .#{$c-form-field-element} {
+    @include form_element(
+      $token-color-white,
+      $color,
+      $color,
+      ".#{$c-form-field-element}"
+    ); // add new elements
+
+    &:checked::before {
+      background-color: $color;
+    }
+  }
+}
+
+@mixin form-field-color($color) {
+  &:not([class*="is-"]) {
+    .#{$c-form-field-element}:checked {
+      border-color: $color;
+
+      &::before {
+        background-color: $color;
+      }
+    }
+  }
+}
+
+.#{$c-form-field-small} {
+  .#{$c-form-field-label} {
+    line-height: 1;
+  }
+
+  /* States */
+  &:not([class~="is-disabled"]) {
+    /* Default */
+    .#{$c-form-field-element} {
+      @include form_element(
+        $token-color-white,
+        $token-color-basic-800,
+        null,
+        ".#{$c-form-field-element}"
+      );
+
+      &:checked {
+        border-color: $token-color-basic-800;
+
+        &::before {
+          background-color: $token-color-basic-800;
+        }
+      }
+    }
+
+    /* success */
+    &.#{$state-success} {
+      @include form-field-state($token-color-success-500);
+    }
+
+    /* error */
+    &.#{$state-error} {
+      @include form-field-state($token-color-danger-500);
+    }
+
+    /* info */
+    &.#{$state-info} {
+      @include form-field-state($token-color-info-500);
+    }
+
+    /* warning */
+    &.#{$state-warning} {
+      @include form-field-state($token-color-warning-500);
+    }
+  }
+
+  &.#{$state-disabled} {
+    .#{$c-form-field-hint},
+    .#{$c-form-field-helper},
+    .#{$c-form-field-label} {
+      color: $token-color-basic-400;
+    }
+    .#{$c-form-field-element} {
+      @include form_element(
+        $token-color-basic-200,
+        $token-color-basic-400,
+        $token-color-basic-400,
+        ".#{$c-form-field-element}"
+      );
+    }
+
+    /* prevent actions */
+    > * {
+      pointer-events: none;
+    }
+  }
+}
+
+[ui-color='riu'] > .#{$c-form-field-small} {
+  @include form-field-color($token-color-500);
+}
+
+[ui-color='primary'] > .#{$c-form-field-small} {
+  @include form-field-color(var(--primary-color-500));
+}
+
+[ui-color='secondary'] > .#{$c-form-field-small} {
+  @include form-field-color($token-color-secondary-500);
+}
+
+[ui-color='palace'] > .#{$c-form-field-small} {
+  @include form-field-color($token-color-palace-500);
+}
+
+[ui-color='plaza'] > .#{$c-form-field-small} {
+  @include form-field-color($token-color-plaza-500);
+}
+
+[ui-color='white'] > .#{$c-form-field-small} {
+  color: $token-color-white,;
+}
