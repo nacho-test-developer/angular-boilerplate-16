@@ -105,10 +105,6 @@ $c-form-field-small: "#{$c-form-field-name}--small";
   }
 }
 
-[ui-color='riu'] > .#{$c-form-field-small} {
-  @include form-field-color($token-color-500);
-}
-
 [ui-color='primary'] > .#{$c-form-field-small} {
   @include form-field-color(var(--primary-color-500));
 }

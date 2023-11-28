@@ -145,7 +145,7 @@
       @include button_color_generate($token-color-secondary-500, $token-color-secondary-500);
     }
 
-    &[ui-color~='riu'] {
+    &[ui-color~='brand'] {
       @include button_color_generate($token-color-500, $token-color-500);
     }
 

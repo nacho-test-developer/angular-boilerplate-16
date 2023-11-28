@@ -79,7 +79,7 @@ $c-tag-name: "c-link";
     @include link-color(var(--primary-color-500));
   }
 
-  &[ui-color="riu"] {
+  &[ui-color="brand"] {
     @include link-color($token-color-500);
   }
 
