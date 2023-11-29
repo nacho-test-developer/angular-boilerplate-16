@@ -6,7 +6,7 @@
       <div class="o-container u-pv-6 u-mv-2">
         <p class="o-type-lg">Example (componente Atómico)</p>
         <section class="u-mb-10 u-text-center u-shadows-xs u-p">
-          <button class="o-type-lg u-pointer u-color-100 u-pv-2 u-ph-4 u-reset-button"><strong>Example</strong></button>
+          <button class="o-type-lg u-pointer u-pv-2 u-ph-4 u-reset-button"><strong>Example</strong></button>
         </section>
         <section class="u-pt-8 u-mt-8">
           <h1 class="u-pb-2">Fundamentals</h1>
@@ -90,7 +90,6 @@
             <h6 class="u-weight-bold u-pt-xl">(Brand)</h6>
             <!-- BRAND -->
             <div class="u-mb-lgr">
-              <h6>Riu</h6>
               <div class="o-grid o-grid--center u-mb-lg">
                 <div class="o-grid__col u-2/12@xs">
                   <span class="u-width u-color-white u-block u-pv-md u-bgcolor-primary-900">900</span>
@@ -99,7 +98,7 @@
                   <span class="u-width u-color-white u-block u-pv-md u-bgcolor-primary-700">700</span>
                 </div>
                 <div class="o-grid__col u-2/12@xs">
-                  <span class="u-width u-color-white u-block u-pv-md u-bgcolor-riu">500</span>
+                  <span class="u-width u-color-white u-block u-pv-md u-bgcolor-primary">500</span>
                 </div>
                 <div class="o-grid__col u-2/12@xs">
                   <span class="u-width u-block u-pv-md u-bgcolor-primary-300">300</span>
@@ -473,38 +472,8 @@
               </span>
             </div>
           </div>
-          <div class="styles__example">
-            <div class="u-flex u-jc-between u-flex-wrap">
-              <h5>Container</h5>
-              <small class="u-mb-md">
-                <pre>eg: o-container</pre>
-              </small>
-            </div>
-            <p>
-              Container (default) = 1500px<br />
-              gutter 32px (> mobile) / 20px<br />
-              class "o-container"
-            </p>
-            <div class="o-container u-bgcolor-primary-100 u-pv u-border-xs u-mb-md">
-              <div class="u-bgcolor-basic-400 u-border-xs u-text-center u-p">DEFAULT</div>
-            </div>
-            <p>
-              Container (large) = 1920px<br />
-              gutter 32px (> mobile) / 20px<br />
-              class "o-container o-container--large"
-            </p>
-            <div class="o-container o-container--large u-bgcolor-primary-100 u-pv u-border-xs u-mb-md">
-              <div class="u-bgcolor-basic-400 u-border-xs u-text-center u-p">LARGE</div>
-            </div>
-            <p>
-              Container (fluid) = 100%<br />
-              gutter 32px (> mobile) / 20px<br />
-              class "o-container o-container--fluid"
-            </p>
-            <div class="o-container o-container--fluid u-bgcolor-primary-100 u-pv u-border-xs u-mb-md">
-              <div class="u-bgcolor-basic-400 u-border-xs u-text-center u-p">FLUID</div>
-            </div>
-          </div>
+        </section>
+        <section class="u-pt-8 u-mt-8">
           <div class="styles__example">
             <div class="u-flex u-jc-between u-flex-wrap">
               <h5>Grid</h5>
@@ -572,6 +541,43 @@
           </div>
         </section>
       </div>
-
+    <section>
+        <div class="o-container styles__example">
+          <div class="u-flex u-jc-between u-flex-wrap">
+            <h5>Container</h5>
+            <small class="u-mb-md">
+              <pre>eg: o-container</pre>
+            </small>
+          </div>
+          <p>
+            Container (default) = 1500px<br />
+            gutter 32px (> mobile) / 20px<br />
+            class "o-container"
+          </p>
+        </div>
+        <div class="o-container u-bgcolor-primary-100 u-pv u-border-xs u-mb-md">
+          <div class="u-bgcolor-basic-400 u-border-xs u-text-center u-p">DEFAULT</div>
+        </div>
+        <div class="o-container u-pt-8">
+          <p>
+            Container (large) = 1920px<br />
+            gutter 32px (> mobile) / 20px<br />
+            class "o-container o-container--large"
+          </p>
+        </div>
+        <div class="o-container o-container--large u-bgcolor-primary-100 u-pv u-border-xs u-mb-md">
+          <div class="u-bgcolor-basic-400 u-border-xs u-text-center u-p">LARGE</div>
+        </div>
+        <div class="o-container u-pt-8">
+          <p>
+            Container (fluid) = 100%<br />
+            gutter 32px (> mobile) / 20px<br />
+            class "o-container o-container--fluid"
+          </p>
+        </div>
+        <div class="o-container o-container--fluid u-bgcolor-primary-100 u-pv u-border-xs u-mb-md">
+          <div class="u-bgcolor-basic-400 u-border-xs u-text-center u-p">FLUID</div>
+        </div>
+      </section>
     </ng-container>
 </app-page-layout>
