@@ -5,17 +5,13 @@ $view-v2-name: ".view-v2";
 
 :host {
   button:not([disabled]) {
-    background-color: $token-color-brand-500;
+    background-color: $token-color-500;
     border: {
-      color: $token-color-brand-500;
+      color: $token-color-500;
       style: solid;
       width: 1px;
     }
-    border-radius: $token-border-radius-sm;
-    color: $token-color-brand-500;
-    font-size: $token-font-size-text-lg;
-    line-height: $token-line-height-md;
-    padding: $token-spacing-md;
+    border-radius: map.get($iota-border-radius, md);
 
     &:hover {
       background-color: $token-color-300;
@@ -23,7 +19,7 @@ $view-v2-name: ".view-v2";
   }
 
   .styles__example {
-    border-top: 1px solid $token-color-primary-500;
+    border-top: 1px solid $token-color-secondary-500;
     padding-top: 80px;
     margin-top: 80px;
   }
